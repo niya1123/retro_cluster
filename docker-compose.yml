@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  retro_cluster:
+    build:
+      context: .
+      args:
+        - OPENAI_KEY=${OPENAI_KEY}
+    ports:
+      - "3000:3000"
+    environment:
+      - OPENAI_KEY=${OPENAI_KEY}
+    restart: unless-stopped
